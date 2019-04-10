@@ -6271,6 +6271,16 @@ public class LocalInspectionTestGenerated extends AbstractLocalInspectionTest {
         public void testTypeWithRuntime() throws Exception {
             runTest("idea/testData/inspectionsLocal/removeRedundantQualifierName/typeWithRuntime.kt");
         }
+
+        @TestMetadata("userTypeWithTypeParameter.kt")
+        public void testUserTypeWithTypeParameter() throws Exception {
+            runTest("idea/testData/inspectionsLocal/removeRedundantQualifierName/userTypeWithTypeParameter.kt");
+        }
+
+        @TestMetadata("withTypeParameter.kt")
+        public void testWithTypeParameter() throws Exception {
+            runTest("idea/testData/inspectionsLocal/removeRedundantQualifierName/withTypeParameter.kt");
+        }
     }
 
     @TestMetadata("idea/testData/inspectionsLocal/removeRedundantSpreadOperator")
