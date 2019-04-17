@@ -148,6 +148,8 @@ class KotlinCallCompleter(
         if (returnType == null) return
         if (expectedType == null || TypeUtils.noExpectedType(expectedType)) return
 
+        if (csBuilder.currentStorage().notFixedTypeVariables.isEmpty()) return
+
         // We don't add expected type constraint for constant expression like "1 + 1" because of type coercion for numbers:
         // val a: Long = 1 + 1, note that result type of "1 + 1" will be Int and adding constraint with Long will produce type mismatch
         if (!resolutionCallbacks.isCompileTimeConstant(resolvedCall, expectedType)) {
